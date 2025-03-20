@@ -1,0 +1,24 @@
+MariaDB [UOV]> create table physician(PhysicianID INT,Name VARCHAR(30),Position VARCHAR(30));
+Query OK, 0 rows affected (0.012 sec)
+
+MariaDB [UOV]> INSERT INTO physician VALUES(1,'John Dorian','Staff Internist'),(2,'Elliot Reid','Attending Physician'),(3,'Christopher Turk','Surgical Attending physician'),(4,'Percival Cox','Senior Attending physician'),(5,'Keith Dudemeister''MD Resident'),(6,'Molly Clock','Attending psychiatrist');
+ERROR 1136 (21S01): Column count doesn't match value count at row 5
+MariaDB [UOV]> SELECT * FROM physician;
+Empty set (0.000 sec)
+
+MariaDB [UOV]> INSERT INTO physician VALUES(1,'John Dorian','Staff Internist'),(2,'Elliot Reid','Attending Physician'),(3,'Christopher Turk','Surgical Attending physician'),(4,'Percival Cox','Senior Attending physician'),(5,'Keith Dudemeister','MD Resident'),(6,'Molly Clock','Attending psychiatrist');
+Query OK, 6 rows affected (0.002 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+MariaDB [UOV]> select * from physician;
++-------------+-------------------+------------------------------+
+| PhysicianID | Name              | Position                     |
++-------------+-------------------+------------------------------+
+|           1 | John Dorian       | Staff Internist              |
+|           2 | Elliot Reid       | Attending Physician          |
+|           3 | Christopher Turk  | Surgical Attending physician |
+|           4 | Percival Cox      | Senior Attending physician   |
+|           5 | Keith Dudemeister | MD Resident                  |
+|           6 | Molly Clock       | Attending psychiatrist       |
++-------------+-------------------+------------------------------+
+6 rows in set (0.000 sec)
